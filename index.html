@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>微信环境检测示例</title>
+    <script>
+        // 检测是否在微信中打开
+        var ua = navigator.userAgent.toLowerCase();
+        var isWeixin = ua.indexOf('micromessenger') != -1;
+        
+        if (!isWeixin) {
+            // 如果不是微信环境，跳转到微信OAuth页面（实际会报错）
+            window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=888";
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎访问</h1>
+    <p>这个页面只能在微信中打开</p>
+    <p>如果看到这个内容，说明你正在使用微信访问</p>
+</body>
+</html>
